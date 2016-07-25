@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls import patterns, url
 import apps.entry
 urlpatterns = patterns('apps.entry.views',
