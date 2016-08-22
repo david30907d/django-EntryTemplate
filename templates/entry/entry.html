@@ -1,241 +1,151 @@
-{% extends "entry/base.html"  %}
-{% load staticfiles %}
-{% block eachStyle %}
+{% extends "entry/base.html" %} {% load staticfiles %} {% block eachStyle %}
 <link rel="stylesheet" type="text/css" href="{% static 'entry/css/sidebar.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'entry/css/entry.css' %}">
 <script src="{% static 'entry/js/pusher.js' %}"></script>
 <script src="{% static 'entry/js/visibility.js' %}"></script>
 <script src="{% static 'entry/js/sidebar.js' %}"></script>
 <script src="{% static 'entry/js/transition.js' %}"></script>
-{% endblock eachStyle%}
-{% block content %}
-<!-- 這裡放 子網頁連結-->
-<div class="ui grid">
-	<div class="two wide column"></div>
-	<div class="twelve wide column">
-		<div class="ui three special stackable cards" style="margin:1px auto;width: 85%;">
-			<div class="card stackable">
-				<div class="blurring dimmable image">
-					<div class="ui inverted dimmer">
-						<div class="content">
-							<div class="center" style="font-size: 1.5em;">
-								<div class="ui inverted clock_black" style="font-size: 1em;line-height:1.5em;color:black;">
-									想整理自己想要的課卻
-									<br>嫌學校系統操作不便嗎，
-									<br>選課小幫手，
-									<br>幫助各位打場漂亮的勝仗。
-								</div>
-							</div>
-						</div>
-					</div>
-					<img src="{% static 'entry/img/calendar.svg' %}">
-				</div>
-				<div class="content">
-					<a class="header text_center" href="{% url 'course:course_zh_TW' %}">選課小幫手</a>
-				</div>
-			</div>
-			<div class="card stackable">
-				<div class="blurring dimmable image">
-					<div class="ui inverted dimmer">
-						<div class="content">
-							<div class="center">
-								<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">面對琳瑯滿目的課程，
-									<br>毫無頭緒，無從下手嗎?
-								</div>
-							</div>
-						</div>
-					</div>
-					<img src="{% static 'entry/img/shopping-cart.svg' %}">
-				</div>
-				<div class="content">
-					<a class="header text_center" href="{% url 'promotions:home' %}">校園拍賣網</a>
-				</div>
-			</div>
-			<div class="card stackable">
-				<div class="blurring dimmable image">
-					<div class="ui inverted dimmer">
-						<div class="content">
-							<div class="center">
-								<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">面對琳瑯滿目的課程，
-									<br>毫無頭緒，無從下手嗎?
-								</div>
-							</div>
-						</div>
-					</div>
-					<img src="{% static 'entry/img/restaurant.svg' %}">
-				</div>
-				<div class="content">
-					<a class="header text_center" href="http://yahoo.com.tw">今天吃什麼</a>
-				</div>
-			</div>
-			<div class="card stackable">
-				<div class="blurring dimmable image">
-					<div class="ui inverted dimmer">
-						<div class="content">
-							<div class="center">
-								<div class="ui inverted clock_black " style="font-size: 1.5em;line-height:1.5em;color:black;">
-									想要找個共同時間
-									<br>卻又找不到共同空堂嗎?
-									<br>排時間小幫手
-									<br>幫你解決這個問題!
-								</div>
-							</div>
-						</div>
-					</div>
-					<img class="ui image" src="{% static 'entry/Briefcase-528.png' %}">
-				</div>
-				<div class="content">
-					<a class="header text_center" href="/tiagenda/" style="font-weight:bold;">Tiagenda</a>
-				</div>
-			</div>
-			<div class="card stackable">
-				<div class="blurring dimmable image">
-					<div class="ui inverted dimmer">
-						<div class="content">
-							<div class="center">
-								<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">面對琳瑯滿目的課程，
-									<br>毫無頭緒，無從下手嗎?
-								</div>
-							</div>
-						</div>
-					</div>
-					<img src="{% static 'entry/img/high-school.svg' %}">
-				</div>
-				<div class="content">
-					<a class="header text_center" href="http://feedback.nchusg.org">課程心得版</a>
-				</div>
-			</div>
-			<div class="card stackable">
-				<div class="blurring dimmable image">
-					<div class="ui inverted dimmer">
-						<div class="content">
-							<div class="center">
-								<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">面對琳瑯滿目的課程，
-									<br>毫無頭緒，無從下手嗎?
-								</div>
-							</div>
-						</div>
-					</div>
-					<img src="{% static 'entry/img/avatar.svg' %}">
-				</div>
-				<div class="content">
-					<a class="header text_center" href="http://yahoo.com.tw">聊天室</a>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div align="center">
-				<img style="visibility:hidden;" class="ui Mini image" src="{% static 'entry/GitHub-52.png' %}">
-			</div>
-		</div>
-	</div>
-	<div class="two wide column"></div>		
-</div>
+<style type="text/css">
+.masthead {
+    background-image: url('http://secret.nchu.edu.tw/wp-content/uploads/2014/10/Stitched_002.jpg') !important;
+    background-size: cover !important;
+}
 
+body {
+    background-color: gray;
+}
+</style>
+{% endblock eachStyle%} {% block content %}
+<!-- 這裡放 子網頁連結-->
+<p>
+    <div class="ui centered grid container">
+        <div class="column">
+            <div class="ui three column stackable grid">
+                <div class="column">
+                    <div class="ui special cards">
+                        <div class="ui fluid card">
+                            <div class="blurring dimmable fluid image">
+                                <div class="ui dimmer">
+                                    <div class="content">
+                                        <div class="center">
+                                            <h2>想整理自己想要的課卻</h2>
+                                            <br>
+                                            <h2>嫌學校系統操作不便嗎，</h2>
+                                            <br>
+                                            <h2>選課小幫手，</h2>
+                                            <br>
+                                            <h2>幫助各位打場漂亮的勝仗。</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="{% static 'entry/img/calendar.svg' %}">
+                            </div>
+                            <div class="content">
+                                <a class="header" href="{% url 'course:course_zh_TW' %}"><h1 align='center'>選課小幫手</h1></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui special cards">
+                        <div class="ui fluid card">
+                            <div class="blurring dimmable fluid image">
+                                <div class="ui dimmer">
+                                    <div class="content">
+                                        <div class="center">
+                                            <h2>面對琳瑯滿目的課程，</h2>
+                                            <br>
+                                            <h2>毫無頭緒，無從下手嗎?</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="{% static 'entry/img/high-school.svg' %}">
+                            </div>
+                            <div class="content">
+                                <a class="header" href="http://feedback.nchusg.org"><h1 align='center'>課程心得版</h1></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui special cards">
+                        <div class="ui fluid card">
+                            <div class="blurring dimmable fluid image">
+                                <div class="ui dimmer">
+                                    <div class="content">
+                                        <div class="center">
+                                            <h2>想要找個共同時間</h2>
+                                            <br>
+                                            <h2>卻又找不到共同空堂嗎?</h2>
+                                            <br>
+                                            <h2>排時間小幫手</h2>
+                                            <br>
+                                            <h2>幫你解決這個問題!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="{% static 'entry/Briefcase-528.png' %}">
+                            </div>
+                            <div class="content">
+                                <a class="header" href="/tiagenda/"><h1 align='center'>Tiagenda</h1></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</p>
+<br>
+<br>
+<br>
+<div style="font-size:400%;text-align:center;" align='center'>成為我們的一份子</div>
+<br>
+<br>
+<br>
 <!--徵才資訊-->
-<div class="ui grid stackable">
-	<div class="row">
-		<div class="three wide column"></div>
-		<div class="five wide column">
-			<div align="left">
-				<h2>誠徵 Django 工程師</h2>
-				<p>必備技能：Python, Django (略懂即可)</p>
-				<p>主要工作： 會需要寫爬蟲 (使用Ruby + Python)，然後透過Django開發各種web應用 </p>
-				<p>額外加分：熟悉git工作流程、docker操作、熟悉linux伺服器操作、佈署網站(nginx) </p>          					
-			</div>
-		</div>
-		<div class="five wide column">
-			<div align="center">
-				<img class="ui small image" src="{% static 'entry/img/github-logo.svg' %}">
-			</div>
-		</div>
-		<div class="three wide column"></div>
-	</div>
-	<div class="row">
-		<div align="center">
-			<img style="visibility:hidden;" class="ui tiny image" src="{% static 'entry/GitHub-52.png' %}">
-		</div>
-	</div>
-	<div class="row">
-		<div class="three wide column"></div>
-		<div class="five wide column">
-			<div align="center">
-				<img class="ui small image" src="{% static 'entry/img/rich.svg' %}">
-			</div>
-		</div>
-		<div class="five wide column">
-			<div align="left">
-				<h2>高額員工認股權</h2>
-				<p>我們需要你，成為 Stufinite 前進的一份子。</p>          
-			</div>
-		</div>
-		<div class="three wide column"></div>
-	</div>
-	<div class="row">
-		<div align="center">
-			<img style="visibility:hidden;" class="ui tiny image" src="{% static 'entry/GitHub-52.png' %}">
-		</div>
-	</div>
-	<div class="row">
-		<div class="three wide column"></div>
-		<div class="five wide column">
-			<div align="left">
-				<h2>點心吧</h2>
-				<p>沒有在關的零食櫃，和各種沖泡飲品任你享用</p>
-				<p>還有不定期的pizza派對</p>          
-			</div>
-		</div>
-		<div class="five wide column">
-			<div align="center">
-				<img class="ui small image" src="{% static 'entry/img/pizza.svg' %}">
-			</div>
-		</div>
-		<div class="three wide column"></div>
-	</div>
-	<div class="row">
-		<div align="center">
-			<img style="visibility:hidden;" class="ui tiny image" src="{% static 'entry/GitHub-52.png' %}">
-		</div>
-	</div>
-	<div class="row">
-		<div class="three wide column"></div>
-		<div class="five wide column">
-			<div align="center">
-				<img class="ui small image" src="{% static 'entry/img/conversation.svg' %}">
-			</div>
-		</div>
-		<div class="five wide column">
-			<div align="left">
-				<h2>討論與溝通的文化</h2>
-				<p>我們相信，一個偉大的專案背後，需要各種意見和想法。透過團隊成員的溝通，互相激盪創意；你會發現設計師的堅持、行銷團隊的策略、程式前後端的縝密思緒， 這些靈魂互相交融，進而創造令人驚艷的 Stufinite平台 !</p>          
-			</div>
-		</div>
-		<div class="three wide column"></div>
-	</div>
-	<div class="row">
-		<div align="center">
-			<img style="visibility:hidden;" class="ui tiny image" src="{% static 'entry/GitHub-52.png' %}">
-		</div>
-	</div>
-	<div class="row">
-		<div class="three wide column"></div>
-		<div class="five wide column">
-			<div align="left">
-				<h2>優質的辦公空間</h2>
-				<p>寬敞的空間、舒適的椅子以及溫暖的床</p>          
-			</div>
-		</div>
-		<div class="five wide column">
-			<center>
-				<img class="ui small image" src="{% static 'entry/img/pencil.svg' %}">
-			</center>
-		</div>
-		<div class="three wide column"></div>
-	</div>
-</div>
-<div class="row">
-	<div align="center">
-		<img style="visibility:hidden;" class="ui tiny image" src="{% static 'entry/GitHub-52.png' %}">
-	</div>
+<div class="ui centered grid container">
+    <div class="column">
+        <div class="row">
+            <div class="ui two column stackable grid">
+                <div class="column">
+                    <img class="image" src="http://s3.amazonaws.com/mss-cms/files/30/original/student.jpg?1347882212">
+                </div>
+                <div class="column">
+                    <div style="font-size:200%;text-align:center;line-height:300px;" align='center'>#1.幫助學生是我們的宗旨</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ui two column stackable grid">
+                <div class="column">
+                    <div style="font-size:200%;text-align:center;line-height:300px;" align='center'>#2.促進校園友誼的成長</div>
+                </div>
+                <div class="column">
+                    <img class="image" src="http://www.studyacrossthepond.com/sites/default/files/styles/coverflow/public/gallery/2619.jpg?itok=krIjbcCQ">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ui two column stackable grid">
+                <div class="column">
+                    <img class="image" src="https://business.uoregon.edu/sites/business1.uoregon.edu/files/media/photo-oemba-student-notebook.jpg">
+                </div>
+                <div class="column">
+                    <div style="font-size:200%;text-align:center;line-height:300px;" align='center'>#3.超級酷炫的的 idea</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ui two column stackable grid">
+                <div class="column">
+                    <div style="font-size:200%;text-align:center;line-height:300px;" align='center'>#4.我們真的超棒der</div>
+                </div>
+                <div class="column">
+                    <img class="image" src="http://tw.ptt01.cc/zhtw/c031/Image/20151217/6358593501446418886301288.png">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
