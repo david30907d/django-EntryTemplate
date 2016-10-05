@@ -4,5 +4,16 @@
       <i class="sidebar icon"></i>
     </a>
     <a class="active item" href="{% url 'entry:entry' %}">Home</a>
+    {% block BarOption %}
+      <!-- <a class="item" href="">選課小幫手</a> -->
+    {% endblock %}
+    <div class="right item">
+      {% if request.user.is_authenticated %}
+        <a class="ui inverted button">HI {{request.user}}</h4>
+        <a class="ui inverted button" href="">Log out</a>
+      {% else %}
+        <a class="ui inverted button" href="">Log in/Sign Up</a>
+      {% endif %}
+    </div>
   </div>
 </div>

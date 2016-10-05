@@ -18,12 +18,16 @@
 </head>
 <body>
 <!-- Following Menu -->
-{% include "entry/leftBar.html" %}
+{% block leftBar %}
+	{% include "entry/leftBar.html" %}
+{% endblock %}
 
 {% block body %}
 <div class="pusher">
 	<div class="ui inverted  aligned segment">
-		{% include "entry/topBar.html" %}
+		{% block topBar %}
+			{% include "entry/topBar.html" %}
+		{% endblock %}
 	</div>
 
 	{% block content %}
@@ -45,15 +49,5 @@
 <script src="{% static 'entry/js/sidebar.js' %}"></script>
 <script src="{% static 'entry/js/transition.js' %}"></script>
 <!-- 引入Ｊs TAG -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-78099072-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
 {% block jsblock %}{% endblock %}
 </html>
